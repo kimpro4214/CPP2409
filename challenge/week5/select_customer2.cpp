@@ -4,7 +4,7 @@ using namespace std;
 
 
 int main(){
-    const int maxPeople = 2;
+    const int maxPeople = 5;
     string names[maxPeople];
     int ages[maxPeople];
 
