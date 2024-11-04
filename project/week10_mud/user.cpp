@@ -16,4 +16,4 @@ void User::IncreaseHP(int inc_hp) {
 int User::GetHP() const {
     return hp;
 }
-
+ 

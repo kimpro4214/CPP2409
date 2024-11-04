@@ -137,3 +137,4 @@ bool checkXY(int x, int y) {
 bool checkGoal(int map[][mapX], int user_x, int user_y) {
     return (map[user_y][user_x] == 4);
 }
+ 

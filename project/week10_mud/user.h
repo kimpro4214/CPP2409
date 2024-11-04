@@ -8,4 +8,4 @@ public:
     void IncreaseHP(int inc_hp); // 체력 증가 함수
     int GetHP() const; // 체력 반환 함수
 };
-
+ 
