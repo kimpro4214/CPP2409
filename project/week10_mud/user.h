@@ -1,13 +1,11 @@
-#include <iostream>
-#include <string>
-using namespace std;
-
 class User {
-private :
-    int hp;
-public :
-    void DecreaseHp(int dec_hp);
-    void IncreaseHp(int inc_hp);
-    int GetHP() { return hp; }
-    User() { return; }
-}
+private:
+    int hp; // 체력
+
+public:
+    User(); // 생성자
+    void DecreaseHP(int dec_hp); // 체력 감소 함수
+    void IncreaseHP(int inc_hp); // 체력 증가 함수
+    int GetHP() const; // 체력 반환 함수
+};
+
