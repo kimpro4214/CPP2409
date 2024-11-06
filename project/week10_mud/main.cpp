@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include <string>
 #include "user.h"
 
@@ -9,19 +10,21 @@ const int mapY = 5;
 
 // 사용자 정의 함수
 bool checkXY(int x, int y);
-void displayMap(int map[][mapX], int user_x, int user_y);
-bool checkGoal(int map[][mapX], int user_x, int user_y);
-void checkState(int map[][mapX], int user_x, int user_y, User &user, bool &isGameOver);
+void displayMap(vector<vector<int>>& map, int user_x, int user_y);
+bool checkGoal(vector<vector<int>>& map, int user_x, int user_y);
+void checkState(vector<vector<int>>& map, int user_x, int user_y, User &user, bool &isGameOver);
 bool checkUser(User user); // 체력 상태를 확인하는 함수
 
 int main() {
-    int map[mapY][mapX] = { 
+    vector<vector<int>> map ={ 
         {0, 1, 2, 0, 4},
         {1, 0, 0, 2, 0},
         {0, 0, 0, 0, 0},
         {0, 2, 3, 0, 0},
         {3, 0, 0, 0, 2} 
     };
+
+
 
     int user_x = 0;
     int user_y = 0;
@@ -87,7 +90,7 @@ int main() {
     return 0;
 }
 
-void checkState(int map[][mapX], int user_x, int user_y, User &user, bool &isGameOver) {
+void checkState(vector<vector<int>>& map, int user_x, int user_y, User &user, bool &isGameOver) {
     switch (map[user_y][user_x]) {
         case 1:
             cout << "아이템을 발견했습니다!" << endl;
@@ -111,7 +114,7 @@ bool checkUser(User user) {
     return user.GetHP() > 0;
 }
 
-void displayMap(int map[][mapX], int user_x, int user_y) {
+void displayMap(vector<vector<int>>& map, int user_x, int user_y) {
     for (int i = 0; i < mapY; i++) {
         for (int j = 0; j < mapX; j++) {
             if (i == user_y && j == user_x) {
@@ -134,7 +137,7 @@ bool checkXY(int x, int y) {
     return (x >= 0 && x < mapX && y >= 0 && y < mapY);
 }
 
-bool checkGoal(int map[][mapX], int user_x, int user_y) {
+bool checkGoal(vector<vector<int>>& map, int user_x, int user_y) {
     return (map[user_y][user_x] == 4);
 }
  
